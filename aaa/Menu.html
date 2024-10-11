@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+    <title>Restaurante</title>
+    <link rel="stylesheet " href="Menu.css">
+
+</head>
+<body>
+   
+   <Sub> <h1> <center>Bem-Vindo(a) ao Restaurante </center> </h1></sub>
+    <header><div class="carrossel">
+        <div class="slides" id="slides">
+            <div class="slide">
+                <img src="https://img.freepik.com/fotos-premium/macarrao-picante-com-pimenta-vermelha-vegetal-fundo-preto_983969-161.jpg" alt="Imagem 2" style="width:100%;">
+            </div>
+            <div class="slide">
+                <img src="https://img.freepik.com/fotos-premium/frango-picante-coreano-fotografia-comercial-imagem-gerada-por-ia_894117-2143.jpg" alt="Imagem 2" style="width:100%;">
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/600x300/3357FF/FFFFFF?text=Imagem+3" alt="Imagem 3" style="width:100%;">
+            </div>
+        </div>
+        <div class="navegacao">
+            <button class="botao" onclick="mudarSlide(-1)">&#10094;</button>
+            <button class="botao" onclick="mudarSlide(1)">&#10095;</button>
+        </div>
+    </div>
+    
+    <script>
+        let slideIndex = 0;
+    
+        function mostrarSlide(index) {
+            const slides = document.getElementById('slides');
+            const totalSlides = slides.children.length;
+            if (index >= totalSlides) {
+                slideIndex = 0;
+            } else if (index < 0) {
+                slideIndex = totalSlides - 1;
+            } else {
+                slideIndex = index;
+            }
+            slides.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
+        }
+    
+        function mudarSlide(n) {
+            mostrarSlide(slideIndex + n);
+        }
+    
+        mostrarSlide(slideIndex); // Mostrar o primeiro slide
+    </script>
+     </header>
+</body>
+</html>
